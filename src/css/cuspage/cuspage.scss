@@ -1,0 +1,169 @@
+@import "../../css/public";
+
+.cuspage {
+  height: 100%;
+
+  .topsqu {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    background: #16325c;
+    text-align: center;
+    color: #ffffff;
+  }
+  .consqu {
+    display: flex;
+    height: calc(100% - 40px);
+
+    .name {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 1px solid #d0d0d0;
+    }
+
+    .moudlesqu {
+      width: 250px;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      border-right: 1px solid #d0d0d0;
+      padding: 0 10px;
+
+      ul {
+        padding: 10px 0;
+
+        li {
+          width: 100%;
+          height: auto;
+          line-height: 18px;
+          padding: 6px 0;
+          margin-bottom: 5px;
+          cursor: pointer;
+
+          &:hover {
+            color: #006dcc;
+          }
+        }
+      }
+    }
+
+    .dissqu {
+      flex-grow: 1;
+      overflow-x: hidden;
+      overflow-y: auto;
+      border-right: 1px solid #d0d0d0;
+      background: #d8edff;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      .name {
+        background: #ffffff;
+        padding-left: 10px;
+        text-align: center;
+        border-bottom: 1px solid #d0d0d0;
+      }
+
+      .con {
+        padding: 5px;
+        height: calc(100% - 45px);
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        .layer {
+          padding: 5px;
+          margin-bottom: 5px;
+          background: #ffffff;
+
+          &.moving {
+            background: rgba(255, 255, 2555, .5);
+          }
+
+          * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+
+          .m {
+            position: relative;
+
+            .border {
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              border: 1px dashed red;
+              z-index: 1;
+            }
+          }
+        }
+        .fixmove_e {
+          position: fixed;
+          left: 0;
+          top: 0;
+          border: 1px dashed blue;
+          z-index: 9999;
+
+          .layer {
+            padding: 0;
+            background: rgba(255, 255, 2555, .5);
+
+            .border {
+              border: none;
+            }
+          }
+        }
+
+      }
+    }
+
+    .funsqu {
+      width: 250px;
+      height: 100%;
+      padding: 0 10px;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+  }
+}
+
+.default_place {
+  width: 100%;
+  height: 40px;
+  background: #b4c4dd;
+}
+
+.adddom {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background: #f9a7a7;
+  color: red;
+}
+
+.adddom1 {
+  background: #f0ad4e;
+}
+
+.adddom2 {
+  background: #0b7ffe;
+}
+
+.fixmove {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 230px;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+  background: #ffffff;
+  border: 1px dashed red;
+  z-index: 9999;
+}

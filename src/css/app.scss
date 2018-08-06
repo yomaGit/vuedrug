@@ -1,0 +1,82 @@
+@import "public";
+
+a, address, b, big, blockquote, body, button, center, cite, code, dd, del, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, hr, html, i, iframe, img, input, ins, legend, li, ol, p, pre, small, span, strong, table, td, textarea, th, tr, u, ul, var, section {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: Microsoft YaHei;
+}
+
+a {
+  text-decoration: none;
+}
+
+li, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+div.body {
+  min-width: 1200px;
+  height: 100%;
+  @include overflow-h-a;
+  font-size: 14px;
+  color: #333333;
+}
+
+a {
+  color: #409eff;
+
+  &:hover {
+    color: #66b2ff;
+  }
+  &:active {
+    color: #3a8ee6;
+  }
+}
+
+.cbg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3);
+  z-index: 31;
+}
+
+.dataLoading {
+  height: 50px;
+  @include flex-c-c;
+  display: none;
+
+  img {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+  }
+}
+
+.floatLeft, .floatleft, .flaotleft {
+  float: left;
+}
+
+.floatRight, .floatright {
+  float: right;
+}
+
+.clear {
+  @include clearboth;
+}

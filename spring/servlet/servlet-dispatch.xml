@@ -1,0 +1,107 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<mvc:resources mapping="/static/**" location="/WEB-INF/static/"/>
+	<mvc:resources mapping="/favicon.ico" location="/favicon.ico"/>
+	<mvc:resources location="/WEB-INF/dist/index.html" mapping="/dist/**"/>
+	<!-- <mvc:resources location="/WEB-INF/pages/mall/" mapping="/mall/**"/> -->
+	<!-- <mvc:resources location="/WEB-INF/dist/" mapping="/dis/**"/>  
+	
+	
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/pages/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	 -->
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/pages/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	
+	<mvc:annotation-driven/>
+	
+	<!-- <mvc:interceptors>
+		 <mvc:interceptor>
+				<mvc:mapping path="/**"/>
+				<mvc:exclude-mapping path="/static/**"/>	
+				<mvc:exclude-mapping path="/dist/**"/>	
+				<mvc:exclude-mapping path="/test/**"/>	
+				<bean class="com.hydee.ydj.merchant.interceptors.UserLoginInterceptor"></bean>
+			</mvc:interceptor> 
+	</mvc:interceptors>
+	 -->
+	
+	
+	
+	<context:component-scan base-package="com.hydee.ydj.merchant.controller" >
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	
+	<context:component-scan base-package="com.hydee.ydj.merchant.service">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+	</context:component-scan>
+	
+	<context:component-scan base-package="com.hydee.ydj.merchant.thread">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+	</context:component-scan>
+	
+	<context:component-scan base-package="com.hydee.ydj.merchant.dao">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+	</context:component-scan>
+
+	<context:component-scan base-package="com.hydee.ydj.merchant.listener">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/>
+	</context:component-scan>
+	
+	<mvc:interceptors>
+	
+
+		 
+		 <mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<mvc:exclude-mapping path="/static/**"/>	
+			<mvc:exclude-mapping path="/dist/**"/>	
+		    <mvc:exclude-mapping path="/index.html"/>	
+		     <mvc:exclude-mapping path="/index"/>
+			<mvc:exclude-mapping path="/dellogin"/>	
+			<mvc:exclude-mapping path="/product/getGoodDetailsForWebMessage"/>	
+			<bean class="com.hydee.ydj.merchant.interceptors.RootInterceptor"></bean>
+		</mvc:interceptor> 
+		
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<mvc:exclude-mapping path="/static/**"/>	
+			<mvc:exclude-mapping path="/dist/**"/>	
+			<mvc:exclude-mapping path="/dis/**"/>	
+			<mvc:exclude-mapping path="/test/**"/>
+			<mvc:exclude-mapping path="/index.html"/>	
+			 <mvc:exclude-mapping path="/index"/>
+			<mvc:exclude-mapping path="/dellogin"/>
+			<mvc:exclude-mapping path="/product/getGoodDetailsForWebMessage"/>		
+			<bean class="com.hydee.ydj.merchant.interceptors.UserLoginInterceptor"></bean>
+		</mvc:interceptor>
+		
+	
+
+		
+	</mvc:interceptors>
+	
+</beans>

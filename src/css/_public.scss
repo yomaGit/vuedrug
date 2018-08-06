@@ -1,0 +1,111 @@
+@mixin flex-c-c { //- flex y center x center
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-c-a { //- flex y center x around
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin flex-c-b { //- flex y center x between
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-c-s { //- flex y center x start
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin flex-c-e { //- flex y center x end
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@mixin flex-s-c { //- flex y start x center
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@mixin flex-e-c { //- flex y end x center
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+@mixin overflow-h-h { //- 超出隐藏 x hidden y hidden
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+@mixin overflow-h-a { //- 超出隐藏 x hidden y auto
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@mixin overflow-a-h { //- 超出隐藏 x auto y hidden
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+@mixin clearboth { //- 取消浮动
+  font: 0/0 sans-serif;
+  clear: both;
+  content: ".";
+  height: 0 !important;
+  width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+@mixin overflow-ellipse { //- 文字超出一横行出现...
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin borderradius2 { //- 圆角2px
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+@mixin borderradius3 { //- 圆角3px
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+@mixin borderradius5 { //- 圆角5px
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+@mixin borderradius10 { //- 圆角10px
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+@mixin borderradius100 { //- 圆角100%
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+
+@mixin transform_1_l {//- 动画0.3s linear
+  -webkit-transition: .1s;
+  -moz-transition: 1s;
+  -ms-transition: .1s;
+  -o-transition: .1s;
+  transition: .1s;
+}
